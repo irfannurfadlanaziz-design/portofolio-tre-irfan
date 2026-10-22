@@ -1,0 +1,1611 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Irfan Nurfadlan Aziz | Personal Portfolio</title>
+  <meta name="description" content="Portofolio Irfan Nurfadlan Aziz, mahasiswa Teknologi Rekayasa Elektro Universitas Gadjah Mada.">
+
+  <!-- Font dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       1. PENGATURAN DASAR
+    ========================= */
+
+    :root {
+      --navy: #10243A;
+      --blue: #3478F6;
+      --white: #FFFFFF;
+      --light: #F4F7FB;
+      --text: #526174;
+      --border: #E3EAF3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1100px, 88%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 15px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.25;
+    }
+
+    .section-heading h2 span {
+      color: var(--blue);
+    }
+
+    .section-heading p {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       2. NAVBAR
+    ========================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 15px 6%;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .logo-dot {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .nav-contact {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--navy);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 6px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background: var(--navy);
+    }
+
+    /* =========================
+       3. BERANDA / HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 30px;
+      background:
+        radial-gradient(ellipse at 90% 30%, #EAF1FF 0%, transparent 38%),
+        var(--white);
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+      min-height: 510px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22A06B;
+    }
+
+    .hero-greeting {
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .hero h1 {
+      margin-bottom: 15px;
+      font-size: clamp(39px, 5vw, 62px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.15;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      margin-bottom: 17px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 540px;
+      margin-bottom: 25px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(52, 120, 246, 0.18);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--text);
+      font-size: 11px;
+    }
+
+    .hero-note::before {
+      width: 30px;
+      height: 2px;
+      background: var(--blue);
+      content: "";
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 370px;
+      margin: 0 auto;
+    }
+
+    .profile-frame {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 25px 60px rgba(16, 36, 58, 0.12);
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 3px 12px;
+    }
+
+    .profile-top span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #D6DFEA;
+    }
+
+    .profile-top small {
+      margin-left: auto;
+      color: #8491A3;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 4.5;
+      border-radius: 12px;
+      background: #EAF1FF;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .profile-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 16px 4px 5px;
+    }
+
+    .profile-caption div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .profile-caption strong {
+      font-size: 12px;
+    }
+
+    .profile-caption small {
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .profile-initials {
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      right: -25px;
+      bottom: 75px;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(16, 36, 58, 0.1);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 11px;
+    }
+
+    .floating-card span {
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #8491A3;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .hero-bottom a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* =========================
+       4. TENTANG SAYA
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-visual {
+      position: relative;
+      padding: 28px;
+      border-radius: 20px;
+      background: #EAF1FF;
+    }
+
+    .about-visual-inner {
+      padding: 30px 24px;
+      border: 1px solid rgba(52, 120, 246, 0.15);
+      border-radius: 14px;
+      background: var(--white);
+    }
+
+    .about-monogram {
+      margin-bottom: 15px;
+      color: var(--blue);
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .about-visual-inner h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .about-visual-inner p {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .about-content .section-tag {
+      margin-bottom: 12px;
+    }
+
+    .about-content h2 {
+      margin-bottom: 20px;
+      font-size: clamp(29px, 3.5vw, 38px);
+      line-height: 1.3;
+    }
+
+    .about-content h2 span {
+      color: var(--blue);
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.95;
+    }
+
+    .about-interests {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .interest-card {
+      padding: 16px 12px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--white);
+    }
+
+    .interest-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue);
+      font-size: 12px;
+    }
+
+    .interest-card span {
+      color: var(--text);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       5. PENDIDIKAN
+       Pendidikan berada di atas Skills
+    ========================= */
+
+    .education-list {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      box-shadow: 0 8px 25px rgba(16, 36, 58, 0.035);
+    }
+
+    .education-symbol {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 12px;
+      background: #EAF1FF;
+      color: var(--blue);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .education-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .education-status {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .education-year {
+      color: var(--text);
+      font-size: 11px;
+    }
+
+    .education-card h3 {
+      margin-bottom: 5px;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .education-card h4 {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .education-card p {
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .education-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .education-tags span {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: var(--light);
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    /* =========================
+       6. SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(16, 36, 58, 0.07);
+    }
+
+    .skill-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 12px;
+      background: #EAF1FF;
+      color: var(--blue);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .skill-card p {
+      margin-bottom: 18px;
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .skill-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-tags span {
+      padding: 6px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    /* =========================
+       7. PENGALAMAN
+    ========================= */
+
+    .experience-list {
+      display: grid;
+      gap: 22px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 22px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      transition: box-shadow 0.25s;
+    }
+
+    .experience-card:hover {
+      box-shadow: 0 12px 30px rgba(16, 36, 58, 0.06);
+    }
+
+    .experience-number {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 12px;
+      background: #EAF1FF;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .experience-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .experience-category {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .experience-date {
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .experience-card h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .experience-card h4 {
+      margin-bottom: 14px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .experience-card p,
+    .experience-card li {
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .experience-card ul {
+      display: grid;
+      gap: 5px;
+      margin: 13px 0 18px;
+      padding-left: 19px;
+    }
+
+    .experience-card li::marker {
+      color: var(--blue);
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .experience-tags span {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: var(--light);
+      color: var(--navy);
+      font-size: 10px;
+    }
+
+    /* =========================
+       8. KONTAK
+    ========================= */
+
+    .contact-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--light);
+    }
+
+    .contact-intro {
+      margin-bottom: 25px;
+    }
+
+    .contact-intro h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .contact-intro p {
+      max-width: 650px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+    }
+
+    .contact-icon {
+      display: grid;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 10px;
+      background: #EAF1FF;
+      color: var(--blue);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-width: 0;
+      gap: 4px;
+    }
+
+    .contact-detail span {
+      color: var(--text);
+      font-size: 10px;
+    }
+
+    .contact-detail strong {
+      overflow-wrap: anywhere;
+      color: var(--navy);
+      font-size: 11px;
+    }
+
+    .contact-arrow {
+      color: var(--blue);
+    }
+
+    /* =========================
+       9. FOOTER
+    ========================= */
+
+    .footer {
+      padding: 24px 6%;
+      background: var(--navy);
+      color: #D6DFEA;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--white);
+    }
+
+    /* =========================
+       10. RESPONSIVE / HP
+    ========================= */
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding-right: 6%;
+        padding-left: 6%;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero-container {
+        gap: 35px;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 70px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .navbar {
+        padding: 13px 6%;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 6% 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--white);
+        box-shadow: 0 12px 20px rgba(16, 36, 58, 0.06);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 5px;
+        font-size: 13px;
+      }
+
+      .nav-links .nav-contact {
+        margin-top: 5px;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .hero-buttons,
+      .hero-note {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: min(100%, 350px);
+      }
+
+      .floating-card {
+        right: -8px;
+        bottom: 65px;
+      }
+
+      .hero-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-visual {
+        max-width: 430px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .about-interests {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card,
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 23px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 25px;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+      }
+
+      .button {
+        padding: 11px 13px;
+        font-size: 11px;
+      }
+
+      .section-heading {
+        margin-bottom: 35px;
+      }
+
+      .education-meta,
+      .experience-meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav class="navbar">
+    <a href="#beranda" class="logo">
+      <span class="logo-icon">I</span>
+      <span>Irfan<span class="logo-dot">.</span></span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Buka menu navigasi"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang Saya</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#skill">Skills</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#kontak" class="nav-contact">Kontak ↗</a>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================
+         BAGIAN 1: BERANDA
+    ========================= -->
+
+    <section class="hero" id="beranda">
+      <div class="container hero-container">
+
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            Electrical Engineering Student
+          </div>
+
+          <p class="hero-greeting">Halo, saya</p>
+
+          <h1>
+            Irfan Nurfadlan<br>
+            <span>Aziz.</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            Mahasiswa Teknologi Rekayasa Elektro
+          </h2>
+
+          <p class="hero-description">
+            Saya merupakan mahasiswa Universitas Gadjah Mada
+            yang sedang membangun fondasi pengetahuan di bidang
+            teknik elektro, pengukuran listrik, rangkaian
+            elektronika, dan pemrograman Python. Saya tertarik
+            untuk terus belajar dan mempersiapkan diri untuk
+            berkarier di industri energi, khususnya minyak dan gas.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#tentang" class="button button-primary">
+              Kenali Saya ↗
+            </a>
+
+            <a href="#pengalaman" class="button button-secondary">
+              Lihat Pengalaman
+            </a>
+          </div>
+
+          <div class="hero-note">
+            Learn today. Build for tomorrow.
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <div class="profile-top">
+              <span></span>
+              <span></span>
+              <span></span>
+              <small>PROFILE / 001</small>
+            </div>
+
+            <!-- Simpan foto dengan nama foto-profil.jpg
+                 di folder yang sama dengan index.html -->
+            <img
+              src="foto-profil.jpg"
+              alt="Foto profil Irfan Nurfadlan Aziz"
+              class="profile-photo"
+            >
+
+            <div class="profile-caption">
+              <div>
+                <strong>Irfan Nurfadlan Aziz</strong>
+                <small>Universitas Gadjah Mada</small>
+              </div>
+              <span class="profile-initials">IA.</span>
+            </div>
+          </div>
+
+          <div class="floating-card">
+            <strong>⚡ Electrical Engineering</strong>
+            <span>Learning in progress</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container hero-bottom">
+        <span>PERSONAL PORTFOLIO · 2026</span>
+        <a href="#tentang">SCROLL TO EXPLORE ↓</a>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BAGIAN 2: TENTANG SAYA
+    ========================= -->
+
+    <section class="section" id="tentang">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+          <div class="about-visual-inner">
+            <div class="about-monogram">IA.</div>
+            <h3>Curious by Nature.</h3>
+            <p>
+              Terus belajar, mengembangkan kemampuan,
+              dan membangun fondasi untuk masa depan.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag">ABOUT ME</span>
+
+          <h2>
+            Mengenal Saya<span>.</span>
+          </h2>
+
+          <p>
+            Saya adalah mahasiswa Universitas Gadjah Mada
+            yang memiliki ketertarikan pada bidang teknik elektro.
+            Saat ini saya sedang mempelajari dasar-dasar
+            pengukuran listrik, analisis rangkaian, elektronika,
+            dan pemrograman Python.
+          </p>
+
+          <p>
+            Saya ingin terus memperkuat pemahaman akademik,
+            mengembangkan kemampuan komunikasi, dan memperluas
+            wawasan melalui proses belajar serta pengalaman baru.
+            Dalam jangka panjang, saya tertarik untuk membangun
+            karier di perusahaan besar, khususnya industri
+            minyak dan gas.
+          </p>
+
+          <div class="about-interests">
+            <div class="interest-card">
+              <strong>01 / Elektro</strong>
+              <span>Rangkaian dan pengukuran listrik</span>
+            </div>
+
+            <div class="interest-card">
+              <strong>02 / Coding</strong>
+              <span>Pemrograman Python dasar</span>
+            </div>
+
+            <div class="interest-card">
+              <strong>03 / Karier</strong>
+              <span>Industri energi dan minyak gas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BAGIAN 3: PENDIDIKAN
+         DILETAKKAN SEBELUM SKILLS
+    ========================= -->
+
+    <section class="section section-light" id="pendidikan">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">MY EDUCATION</span>
+          <h2>Riwayat <span>Pendidikan.</span></h2>
+          <p>
+            Pendidikan yang sedang saya jalani sebagai fondasi
+            untuk mengembangkan pengetahuan dan keterampilan
+            di bidang teknik elektro.
+          </p>
+        </div>
+
+        <div class="education-list">
+
+          <article class="education-card">
+            <div class="education-symbol">01</div>
+
+            <div>
+              <div class="education-meta">
+                <span class="education-status">
+                  CURRENTLY STUDYING
+                </span>
+                <span class="education-year">2026 – Sekarang</span>
+              </div>
+
+              <h3>Universitas Gadjah Mada</h3>
+              <h4>Teknologi Rekayasa Elektro</h4>
+
+              <p>
+                Sekolah Vokasi. Mempelajari dasar-dasar teknik
+                elektro, termasuk matematika, rangkaian listrik,
+                elektronika, fisika, pengukuran listrik,
+                dan pemrograman dasar.
+              </p>
+
+              <div class="education-tags">
+                <span>Teknik Elektro</span>
+                <span>Pengukuran Listrik</span>
+                <span>Pemrograman</span>
+              </div>
+            </div>
+          </article>
+
+          <!--
+            Jika ingin menambahkan SMA/SMK,
+            salin satu article education-card dan
+            isi dengan nama sekolah serta tahun yang benar.
+          -->
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BAGIAN 4: SKILLS
+    ========================= -->
+
+    <section class="section" id="skill">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">SKILLS & LEARNING</span>
+          <h2>Skills yang <span>Dipelajari.</span></h2>
+          <p>
+            Pengetahuan dan keterampilan dasar yang sedang
+            saya kembangkan melalui perkuliahan dan praktikum.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <span class="skill-label">CURRENTLY LEARNING</span>
+            <h3>Electrical Measurement</h3>
+
+            <p>
+              Mempelajari penggunaan instrumen pengukuran
+              dan pembacaan besaran listrik dalam praktikum.
+            </p>
+
+            <div class="skill-tags">
+              <span>Multimeter Analog</span>
+              <span>Multimeter Digital</span>
+              <span>LCR Meter</span>
+              <span>Clamp Meter</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <span class="skill-label">CURRENTLY LEARNING</span>
+            <h3>Python Programming</h3>
+
+            <p>
+              Membangun dasar pemrograman dan mempraktikkan
+              penyelesaian masalah melalui kode sederhana.
+            </p>
+
+            <div class="skill-tags">
+              <span>Python Basics</span>
+              <span>Google Colab</span>
+              <span>Functions</span>
+              <span>NumPy Basics</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⌁</div>
+            <span class="skill-label">FOUNDATION</span>
+            <h3>Electrical Fundamentals</h3>
+
+            <p>
+              Memahami konsep dasar rangkaian dan besaran
+              listrik sebagai fondasi pembelajaran teknik elektro.
+            </p>
+
+            <div class="skill-tags">
+              <span>Tegangan</span>
+              <span>Arus</span>
+              <span>Resistansi</span>
+              <span>Rangkaian Dasar</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BAGIAN 5: PENGALAMAN
+    ========================= -->
+
+    <section class="section section-light" id="pengalaman">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">PRACTICAL EXPERIENCE</span>
+          <h2>Pengalaman <span>Praktikum.</span></h2>
+          <p>
+            Pengalaman pembelajaran praktis yang membantu
+            saya membangun fondasi teknik elektro dan pemrograman.
+          </p>
+        </div>
+
+        <div class="experience-list">
+
+          <article class="experience-card">
+            <div class="experience-number">01</div>
+
+            <div>
+              <div class="experience-meta">
+                <span class="experience-category">
+                  ELECTRICAL ENGINEERING
+                </span>
+                <span class="experience-date">2026 – Sekarang</span>
+              </div>
+
+              <h3>Praktikum Pengukuran Listrik</h3>
+              <h4>Universitas Gadjah Mada</h4>
+
+              <p>
+                Mempelajari penggunaan instrumen pengukuran
+                listrik dan penerapannya dalam pengujian
+                rangkaian dasar.
+              </p>
+
+              <ul>
+                <li>
+                  Mengenal multimeter analog dan digital,
+                  LCR meter, serta clamp meter.
+                </li>
+                <li>
+                  Melakukan pengukuran tegangan, arus,
+                  dan resistansi sesuai kegiatan praktikum.
+                </li>
+                <li>
+                  Mencatat hasil pengukuran dan membandingkannya
+                  dengan perhitungan teori.
+                </li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>Electrical Measurement</span>
+                <span>Electrical Instruments</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-number">02</div>
+
+            <div>
+              <div class="experience-meta">
+                <span class="experience-category">PROGRAMMING</span>
+                <span class="experience-date">2026 – Sekarang</span>
+              </div>
+
+              <h3>Praktikum Pemrograman Dasar</h3>
+              <h4>Universitas Gadjah Mada</h4>
+
+              <p>
+                Mempelajari dasar pemrograman Python melalui
+                latihan dan penyelesaian masalah menggunakan
+                Google Colab.
+              </p>
+
+              <ul>
+                <li>
+                  Mempelajari variabel, tipe data, percabangan,
+                  perulangan, dan fungsi.
+                </li>
+                <li>
+                  Mengerjakan latihan pemrograman menggunakan Python.
+                </li>
+                <li>
+                  Mengenal NumPy untuk operasi dan perhitungan
+                  data sederhana.
+                </li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>Python</span>
+                <span>Google Colab</span>
+                <span>NumPy</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BAGIAN 6: KONTAK
+    ========================= -->
+
+    <section class="section" id="kontak">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">GET IN TOUCH</span>
+          <h2>Mari <span>Terhubung.</span></h2>
+          <p>
+            Terbuka untuk terhubung, bertukar wawasan,
+            dan belajar lebih banyak tentang dunia teknik elektro.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-intro">
+            <h3>Let's Connect!</h3>
+            <p>
+              Saya sedang mengembangkan pengetahuan dan
+              keterampilan di bidang teknik elektro serta
+              pemrograman. Silakan kunjungi profil LinkedIn
+              saya atau hubungi melalui email.
+            </p>
+          </div>
+
+          <div class="contact-links">
+
+            <!-- GANTI ALAMAT EMAIL DI BAWAH -->
+            <a
+              href="mailto:EMAIL_KAMU@example.com"
+              class="contact-item"
+            >
+              <div class="contact-icon">@</div>
+              <div class="contact-detail">
+                <span>Email</span>
+                <strong>EMAIL_KAMU@example.com</strong>
+              </div>
+              <span class="contact-arrow">↗</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/irfan-nurfadlan-aziz-294255445/"
+              class="contact-item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="contact-icon">in</div>
+              <div class="contact-detail">
+                <span>LinkedIn</span>
+                <strong>Irfan Nurfadlan Aziz</strong>
+              </div>
+              <span class="contact-arrow">↗</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer class="footer">
+    <p>
+      © 2026 <strong>Irfan Nurfadlan Aziz</strong>.
+      Built with curiosity and a passion for learning.
+    </p>
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT NAVBAR
+  ========================= -->
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    // Membuka dan menutup menu pada layar kecil
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("show");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+      });
+
+      // Menutup menu setelah tautan dipilih
+      navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("show");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
